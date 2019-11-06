@@ -2,11 +2,17 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const session = require('express-session')
 
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
 
+app.use(session({
+    secret: "feedmeseymour",
+    resave: false,
+    saveUninitialized: false
+}))
 ///////////////////////
 
 /////Port//////
@@ -41,11 +47,15 @@ app.use(methodOverride('_method'))
 ///////////////////////
 const legosController = require('./controllers/legos.js');
 app.use('/legos', legosController)
+
 /////Routes//////
 app.get('/', (req, res) => {
     res.redirect('/legos')
 })
 
+app.get('/get', (req, res) => {
+    res.send(req.session.username)
+})
 
 /////Listener//////
 
