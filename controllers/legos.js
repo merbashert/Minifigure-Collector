@@ -28,8 +28,21 @@ router.get('/:id', (req, res) => {
     );
 });
 
+router.put('/:id', (req, res) => {
+    Lego.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedLego) => {
+        res.redirect('/legos')
+    })
+})
 
-
+router.get('/:id/edit', (req, res) => {
+    Lego.findById(req.params.id, (err, foundLego) => {
+        res.render(
+            'edit.ejs',
+        {
+            lego:foundLego
+        })
+    })
+})
 router.post('/', (req, res) => {
     Lego.create(req.body, (error, createdLego) => {
         res.redirect('/legos')
