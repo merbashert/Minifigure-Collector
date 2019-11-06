@@ -43,8 +43,15 @@ router.get('/:id/edit', (req, res) => {
         })
     })
 })
+
 router.post('/', (req, res) => {
     Lego.create(req.body, (error, createdLego) => {
+        res.redirect('/legos')
+    })
+})
+
+router.delete('/:id', (req, res) => {
+    Lego.findByIdAndRemove(req.params.id, (err, data) => {
         res.redirect('/legos')
     })
 })

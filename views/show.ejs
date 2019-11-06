@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-    </head>
-    <body>
-        <h1>Show Page</h1>
-<%=lego.name%>
-<%=lego.series%>
-<img src = "<%=lego.img%>">
-        </ul>
-    </body>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <h1>Show Page</h1>
+
+    <img src = "<%=lego.img%>"><br/>
+    Name: <%=lego.name%><br/>
+    Series: <%=lego.series%><br/>
+    Year: <%=lego.year%><br/>
+
+    <a href = "/legos">Back to Index</a>
+</body>
 </html>
