@@ -3,16 +3,12 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const session = require('express-session')
-
 const app = express()
+
 const db = mongoose.connection
 require('dotenv').config()
 
-app.use(session({
-    secret: "feedmeseymour",
-    resave: false,
-    saveUninitialized: false
-}))
+
 ///////////////////////
 
 /////Port//////
@@ -44,13 +40,36 @@ app.use(express.urlencoded({ extended: false }))
 //Be able to use delete and put routes
 app.use(methodOverride('_method'))
 
+app.use(session({
+    secret: "feedmeseymour",
+    resave: false,
+    saveUninitialized: false
+}))
+
 ///////////////////////
+
+/////Controllers//////
 const legosController = require('./controllers/legos.js');
 app.use('/legos', legosController)
 
+const usersController = require('./controllers/users.js');
+app.use('/users', usersController)
+
+const sessionsController = require('./controllers/sessions.js');
+app.use('/sessions', sessionsController)
+
+///////////////////////
+
 /////Routes//////
+
+
 app.get('/', (req, res) => {
-    res.redirect('/legos')
+    res.render('home.ejs')
+})
+
+app.get('/set', (req, res) => {
+    req.session.username = "meredith";
+    res.send("I set a cookie")
 })
 
 app.get('/get', (req, res) => {
