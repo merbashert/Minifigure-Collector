@@ -3,15 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/show.css">
 </head>
 <body>
-    <h1>Show Page</h1>
-
-    <img src = "<%=lego.img%>"><br/>
-    Name: <%=lego.name%><br/>
-    Series: <%=lego.series%><br/>
-    Year: <%=lego.year%><br/>
-
-    <a href = "/legos">Back to Index</a>
+    <div class = "container">
+        <div class = "image">
+            <img src = "<%=lego.img%>">
+        </div>
+        <div class = "info">
+            Name: <%=lego.name%><br/>
+            Series: <%=lego.series%><br/>
+            Year: <%=lego.year%><br/>
+        </div>
+    </div>
+    <br/>
+    <footer>
+        <a href = "/legos">Back to Index</a>
+    </footer>
 </body>
 </html>
