@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <h1>Index Page</h1>
+    <ul>
+        <% for(let i = 0; i < legos.length; i++){ %>
+            <li>
+                <a href = "/legos/<%=legos[i].id%>">
+                    <%=legos[i].name%>
+                </a>
+                <%=legos[i].img%>
+                <img src = "<%=legos[i].img%>">
+            </li>
+            <% } %>
+        </ul>
+    </body>
+    </html>

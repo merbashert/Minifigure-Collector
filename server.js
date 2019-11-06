@@ -2,9 +2,11 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+const Lego = require('./models/legos.js')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
+
 ///////////////////////
 
 /////Port//////
@@ -39,9 +41,40 @@ app.use(methodOverride('_method'))
 ///////////////////////
 
 /////Routes//////
-app.get('/', (req, res) => {
-    res.send('Hello World')
+
+app.get('/legos', (req, res) => {
+    Lego.find({}, (error, legos) => {
+        res.render(
+            'index.ejs',
+            {
+                legos:legos
+            }
+        );
+    });
+});
+
+app.get('/legos/new', (req, res) => {
+    res.render('new.ejs');
 })
+
+app.get('/legos/:id', (req, res) => {
+    Lego.findById(req.params.id, (err, foundLego) => {
+        res.render(
+            'show.ejs', {
+                lego: foundLego
+            });
+        }
+    );
+});
+
+
+
+app.post('/legos', (req, res) => {
+    Lego.create(req.body, (error, createdLego) => {
+        res.redirect('/legos')
+    })
+})
+
 
 /////Listener//////
 
