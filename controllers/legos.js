@@ -19,8 +19,8 @@ router.get('/new', (req, res) => {
 });
 
 
-//Search graveyard
-// router.get('/results/:name', (req, res) => {
+// Search graveyard
+// router.get('/results/', (req, res) => {
 //     Lego.find({}, (err, foundLego) => {
 //         res.render(
 //             'results.ejs',

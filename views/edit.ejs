@@ -7,9 +7,14 @@
 <body>
     <h1>Edit Page</h1>
     <form action = "/legos/<%=lego.id%>?_method=PUT" method = "POST">
+        <img src = "<%=lego.img%>"><br/>
             Name: <input type="text" name="name" value="<%=lego.name%>"><br/>
+            Series: <input type="text" name="name" value="<%=lego.series%>"><br/>
+            Year: <input type="text" name="name" value="<%=lego.year%>"><br/>
             <input type="submit" value="Submit Changes">
         </form>
+        <nav>
+            <a href = "/legos">Back to Index</a>
 
     </body>
     </html>

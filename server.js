@@ -42,7 +42,9 @@ app.use(methodOverride('_method'))
 const legosController = require('./controllers/legos.js');
 app.use('/legos', legosController)
 /////Routes//////
-
+app.get('/', (req, res) => {
+    res.redirect('/legos')
+})
 
 
 /////Listener//////
