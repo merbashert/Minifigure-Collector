@@ -3,33 +3,35 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <h1>Index Page</h1>
-    <ul>
+
+    <div class = "container">
         <% for(let i = 0; i < legos.length; i++){ %>
-            <li>
+            <div class = "card">
                 <a href = "/legos/<%=legos[i].id%>">
                     <%=legos[i].name%>
                 </a>
                 <img src = "<%=legos[i].img%>"><br/>
-                <form action="/legos/<%=legos[i].id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete This Lego">
-                </form>
-                <a href = "/legos/<%=legos[i].id%>/edit">Edit This Lego</a>
-            </li>
-            <% } %>
-        </ul>
-
-
-
-        <nav>
-            <a href="/legos/new">Create a New Lego</a>
-        </nav>
-
-        <form action="/sessions/destroy" method="post">
-                <input type="submit" value="Log Out">
+                <!-- <form action="/legos/<%=legos[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="Delete This Lego"> -->
             </form>
-            
+        </div>
+        <% } %>
+    </div>
+
+
+
+
+    <nav>
+        <a href="/legos/new">Create a New Lego</a>
+    </nav>
+
+    <form action="/sessions/destroy" method="post">
+        <input type="submit" value="Log Out">
+    </form>
+
 </body>
 </html>

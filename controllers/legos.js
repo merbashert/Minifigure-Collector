@@ -6,117 +6,7 @@ const router = express.Router();
 
 router.get('/seed', (req, res)=>{
     Lego.create([
-        {
-            name: "DJ",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/series/dj.jpg"
-        },
 
-        {
-            name: "Jungle Explorer",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/jungle-explorer.jpg"
-        },
-
-        {
-            name: "Karate Master",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/karate-master.jpg"
-        },
-
-        {
-            name: "Lifeguard",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/lifeguard.jpg"
-        },
-
-        {
-            name: "Mexican",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/mexican.jpg"
-        },
-
-        {
-            name: "Mime Artist",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/mime-artist.jpg"
-        },
-
-        {
-            name: "Pharaoh",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/pharaoh.jpg"
-        },
-
-        {
-            name: "Pop Star",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/pop-star.jpg"
-        },
-
-        {
-            name: "Ringmaster",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/ringmaster.jpg"
-        },
-
-        {
-            name: "Skier",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/skier.jpg"
-        },
-
-        {
-            name: "Spartan",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/spartan.jpg"
-        },
-
-        {
-            name: "Surfer",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/surfer.jpg"
-        },
-
-        {
-            name: "Traffic Cop",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/traffic-cop.jpg"
-        },
-
-        {
-            name: "Vampire",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/vampire.jpg"
-        },
-
-        {
-            name: "Weightlifter",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/weightlifter.jpg"
-        },
-
-        {
-            name: "Witch",
-            series:	2,
-            year: 2010,
-            img: "/images/series2/witch.jpg"
-        }
     ], (err, data)=>{
         res.redirect('/legos');
     })
@@ -124,7 +14,7 @@ router.get('/seed', (req, res)=>{
 
 router.get('/', (req, res) => {
     if(req.session.username) {
-        Lego.find({}, (error, legos) => {
+        Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
             res.render(
                 'legos/index.ejs',
                 {
