@@ -4,13 +4,13 @@ const Saved = require('../models/saved.js')
 const router = express.Router();
 
 
-router.get('/seed', (req, res)=>{
-    Lego.create([
-
-    ], (err, data)=>{
-        res.redirect('/legos');
-    })
-});
+// router.get('/seed', (req, res)=>{
+//     Lego.create([
+//
+//     ], (err, data)=>{
+//         res.redirect('/legos');
+//     })
+// });
 
 router.get('/', (req, res) => {
     if(req.session.username) {
@@ -28,14 +28,14 @@ router.get('/', (req, res) => {
 
 });
 
-router.get('/new', (req, res) => {
-    res.render('legos/new.ejs');
-});
+// router.get('/new', (req, res) => {
+//     res.render('legos/new.ejs');
+// });
 
 router.get('/:id/series', (req, res) => {
     Lego.find({series: req.params.id}, (err, foundLego) => {
         res.render(
-            'legos/results.ejs',
+            'legos/series.ejs',
             {
                 legos: foundLego,
                 series: req.params.id
@@ -88,33 +88,34 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
-router.post('/:id/save', (req, res) => {
-    Lego.findById(req.params.id, (err, savedLego) => {
-        savedLogo.save
-    })
-})
+//This doesn't do anything yet - maybe it needs to be in saved.js?
+// router.post('/:id/save', (req, res) => {
+//     Lego.findById(req.params.id, (err, savedLego) => {
+//         savedLogo.save
+//     })
+// })
 
 
-router.post('/', (req, res) => {
-    if(req.body.happyguy === "on") {
-        req.body.img = "/images/new/happy_guy.jpg"
-    } if(req.body.happygirl === "on") {
-        req.body.img = "/images/new/happy_girl.jpg"
-    }if(req.body.angryguy === "on") {
-        req.body.img = "/images/new/angry_guy.jpg"
-    }if(req.body.angrygirl === "on") {
-        req.body.img = "/images/new/angry_girl.jpg"
-    }if(req.body.scaredguy === "on") {
-        req.body.img = "/images/new/scared_guy.jpg"
-    }if(req.body.scaredgirl === "on") {
-        req.body.img = "/images/new/scared_girl.jpg"
-    }
-    req.body.series = "Future Lego Series"
-    req.body.year = 2019
-    Lego.create(req.body, (error, createdLego) => {
-        res.redirect('/legos')
-    })
-})
+// router.post('/', (req, res) => {
+//     if(req.body.happyguy === "on") {
+//         req.body.img = "/images/new/happy_guy.jpg"
+//     } if(req.body.happygirl === "on") {
+//         req.body.img = "/images/new/happy_girl.jpg"
+//     }if(req.body.angryguy === "on") {
+//         req.body.img = "/images/new/angry_guy.jpg"
+//     }if(req.body.angrygirl === "on") {
+//         req.body.img = "/images/new/angry_girl.jpg"
+//     }if(req.body.scaredguy === "on") {
+//         req.body.img = "/images/new/scared_guy.jpg"
+//     }if(req.body.scaredgirl === "on") {
+//         req.body.img = "/images/new/scared_girl.jpg"
+//     }
+//     req.body.series = "Future Lego Series"
+//     req.body.year = 2019
+//     Lego.create(req.body, (error, createdLego) => {
+//         res.redirect('/legos')
+//     })
+// })
 
 router.delete('/:id', (req, res) => {
     Lego.findByIdAndRemove(req.params.id, (err, data) => {

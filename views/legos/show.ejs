@@ -13,13 +13,14 @@
         </div>
         <div class = "info">
             Name: <%=lego.name%><br/>
-            Series: <%=lego.series%><br/>
+            <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
             Year: <%=lego.year%><br/>
         </div>
     </div>
     <br/>
     <footer>
-        <a href = "/legos">Back to Index</a>
+        <a href = "/saved">Back to My Saved Legos</a><br/>
+        <a href = "/legos">Back to Full Legos List</a>
     </footer>
 </body>
 </html>

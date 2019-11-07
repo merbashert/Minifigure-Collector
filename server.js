@@ -61,9 +61,12 @@ app.use('/users', usersController)
 const sessionsController = require('./controllers/sessions.js');
 app.use('/sessions', sessionsController)
 
+const newController = require('./controllers/new.js');
+app.use('/new', newController)
+
 
 ///////////////////////
- 
+
 /////Routes//////
 
 

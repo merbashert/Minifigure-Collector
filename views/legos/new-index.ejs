@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/saved.css">
+</head>
+<body>
+    <h1>Lego Suggestions</h1>
+
+    <div class = "container">
+
+        <% for (let i = 0; i < created.length; i++) {%>
+            <div class = "card">
+
+                <%=created[i].name%>
+                <img src = "<%=created[i].img%>">
+                <%=created[i].series%><br/>
+                <%=created[i].year%>
+
+            <form action = "/new/<%=created[i].id%>?_method=DELETE" method="POST">
+                <input type="submit" value="DELETE"/>
+            </form>
+            <a href = "/new/<%=created[i].id%>/edit">Edit</a>
+        </div>
+            <%}%>
+        </div>
+
+    </body>
+    </html>

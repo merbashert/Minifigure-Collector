@@ -4,7 +4,12 @@ const router = express.Router();
 
 router.get('/seed', (req, res)=>{
     Saved.create([
-
+        {
+        name: "Plumber",
+        series:	9,
+        year: 2012,
+        img: "/images/series9/plumber.jpg"
+        }
     ], (err, data)=>{
         res.redirect('/legos');
     })
@@ -24,10 +29,19 @@ router.get('/', (req, res) => {
             );
         });
     } else {
-        res.redirect('/saved')
+        res.redirect('/')
     }
 
 });
 
+router.get('/:id', (req, res) => {
+    Saved.findById(req.params.id, (err, foundLego) => {
+        res.render(
+            'legos/show.ejs', {
+                lego: foundLego
+            }
+        );
+    });
+});
 
 module.exports = router;
