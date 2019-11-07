@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/saved.css">
+</head>
+<body>
+    <h1>Saved Page</h1>
+<div class = "container">
+        <% for(let i = 0; i < saved.length; i++){ %>
+            <div class = "card">
+                <a href = "/saved/<%=saved[i].id%>">
+                    <%=saved[i].name%>
+                </a>
+                <img src = "<%=saved[i].img%>"><br/>
+                <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete This Lego">
+                </form>
+            </div>
+            <% } %>
+        </div>
+
+        <form action="/sessions/destroy" method="post">
+                <input type="submit" value="Log Out">
+            </form>
+
+</body>
+</html>
