@@ -9,3 +9,12 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
+.addbox {
+    display: none;
+    position: absolute;
+}
+
+.hide {
+    display: none;
+}

@@ -14,3 +14,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.addbox {
+    display: none;
+}

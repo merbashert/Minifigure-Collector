@@ -28,9 +28,6 @@ router.get('/', (req, res) => {
 
 });
 
-// router.get('/new', (req, res) => {
-//     res.render('legos/new.ejs');
-// });
 
 router.get('/:id/series', (req, res) => {
     Lego.find({series: req.params.id}, (err, foundLego) => {
@@ -70,6 +67,13 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', (req, res) => {
+    Lego.create(req.body, (error, added) => {
+
+        res.redirect('/add')
+
+    })
+})
 
 router.put('/:id', (req, res) => {
     Lego.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedLego) => {
@@ -88,34 +92,6 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
-//This doesn't do anything yet - maybe it needs to be in saved.js?
-// router.post('/:id/save', (req, res) => {
-//     Lego.findById(req.params.id, (err, savedLego) => {
-//         savedLogo.save
-//     })
-// })
-
-
-// router.post('/', (req, res) => {
-//     if(req.body.happyguy === "on") {
-//         req.body.img = "/images/new/happy_guy.jpg"
-//     } if(req.body.happygirl === "on") {
-//         req.body.img = "/images/new/happy_girl.jpg"
-//     }if(req.body.angryguy === "on") {
-//         req.body.img = "/images/new/angry_guy.jpg"
-//     }if(req.body.angrygirl === "on") {
-//         req.body.img = "/images/new/angry_girl.jpg"
-//     }if(req.body.scaredguy === "on") {
-//         req.body.img = "/images/new/scared_guy.jpg"
-//     }if(req.body.scaredgirl === "on") {
-//         req.body.img = "/images/new/scared_girl.jpg"
-//     }
-//     req.body.series = "Future Lego Series"
-//     req.body.year = 2019
-//     Lego.create(req.body, (error, createdLego) => {
-//         res.redirect('/legos')
-//     })
-// })
 
 router.delete('/:id', (req, res) => {
     Lego.findByIdAndRemove(req.params.id, (err, data) => {

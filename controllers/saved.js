@@ -1,21 +1,16 @@
 const express = require('express');
 const Saved = require('../models/saved.js')
 const router = express.Router();
+const User = require('../models/users.js')
 
-router.get('/seed', (req, res)=>{
-    Saved.create([
-        {
-        name: "Plumber",
-        series:	9,
-        year: 2012,
-        img: "/images/series9/plumber.jpg"
-        }
-    ], (err, data)=>{
-        res.redirect('/legos');
-    })
-
-});
-
+// router.get('/seed', (req, res)=>{
+//     Saved.create([
+//
+//     ], (err, data)=>{
+//         res.redirect('/legos');
+//     })
+//
+// });
 
 
 router.get('/', (req, res) => {
@@ -24,7 +19,8 @@ router.get('/', (req, res) => {
             res.render(
                 'legos/saved.ejs',
                 {
-                    saved:saved
+                    saved:saved,
+                    username:req.session.username
                 }
             );
         });
@@ -33,6 +29,20 @@ router.get('/', (req, res) => {
     }
 
 });
+
+router.get('/add', (req, res) => {
+    res.render(
+        'legos/add.ejs'
+    )
+})
+
+
+router.post('/', (req, res) => {
+    Saved.create(req.body, (error, added) => {
+        res.redirect('/saved')
+
+    })
+})
 
 router.get('/:id', (req, res) => {
     Saved.findById(req.params.id, (err, foundLego) => {
@@ -43,5 +53,15 @@ router.get('/:id', (req, res) => {
         );
     });
 });
+
+
+
+
+
+router.delete('/:id', (req, res) => {
+    Saved.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/saved')
+    })
+})
 
 module.exports = router;
