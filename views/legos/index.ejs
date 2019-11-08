@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h1>Index Page</h1>
-
+        <% include ./partials/navbar.ejs %>
+<h1> All the Legos</h1>
     <div class = "section">
         <% for(let i = 0; i < legos.length; i++){ %>
             <div class = "lego">

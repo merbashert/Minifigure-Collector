@@ -3,27 +3,34 @@
 <head>
     <title></title>
     <% include ../partials/bootstrap-meta.ejs %>
+        <link rel="stylesheet" href="/new.css">
 </head>
 <body>
     <h1>Lego Suggestions</h1>
 
-    <div class = "container">
+    <div class = "section">
 
         <% for (let i = 0; i < created.length; i++) {%>
-            <div class = "card">
+            <div class = "lego">
 
                 <%=created[i].name%>
                 <img src = "<%=created[i].img%>">
-                <%=created[i].series%><br/>
-                <%=created[i].year%>
+                Series: <%=created[i].series%><br/>
+                Year: <%=created[i].year%>
 
             <form action = "/new/<%=created[i].id%>?_method=DELETE" method="POST">
-                <input type="submit" value="DELETE"/>
+                <input class = "btn btn-outline-dark btn-sm"   type="submit" value="DELETE"/>
             </form>
             <a href = "/new/<%=created[i].id%>/edit">Edit</a>
         </div>
             <%}%>
         </div>
+        <br/>
+        <footer>
+            <a href = "/new/create">Create a New Lego</a>
+            <a href = "/saved">Return to My Saved Legos</a>
+            
+        </footer>
 <% include ../partials/bootstrap.ejs %>
     </body>
     </html>

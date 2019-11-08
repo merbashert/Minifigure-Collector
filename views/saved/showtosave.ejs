@@ -7,30 +7,32 @@
 
 </head>
 <body>
+
+    <% include ../partials/navbar_loggedin.ejs %>
     <div class = "container">
 
-            <img src = "<%=lego.img%>"><br/>
+        <img src = "<%=lego.img%>"><br/>
 
-            Name: <%=lego.name%><br/>
-            <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
-            Year: <%=lego.year%><br/>
-
-
-            <form action="/saved" method="post">
-                <input type="submit" value="Add to My Collection">
-                <input type="hidden" name = "name" value="<%=lego.name%>">
-                <input type="hidden" name = "series" value="<%=lego.series%>">
-                <input type="hidden" name = "year" value="<%=lego.year%>">
-                <input type="hidden" name = "img" value="<%=lego.img%>"><br/>
-                <input type="hidden" name = "username" value="<%=username%>">
-
-            </form>
+        Name: <%=lego.name%><br/>
+        <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
+        Year: <%=lego.year%><br/>
 
 
-    <footer>
-        <a href = "/saved">Back to My Saved Legos</a><br/>
-        <a href = "/legos/tosave">Back to Full Legos List to Save</a>
-    </footer>
+        <form action="/saved" method="post">
+            <input type="submit" value="Add to My Collection">
+            <input type="hidden" name = "name" value="<%=lego.name%>">
+            <input type="hidden" name = "series" value="<%=lego.series%>">
+            <input type="hidden" name = "year" value="<%=lego.year%>">
+            <input type="hidden" name = "img" value="<%=lego.img%>"><br/>
+            <input type="hidden" name = "username" value="<%=username%>">
+
+        </form>
+
+
+        <footer>
+            <a href = "/saved">Back to My Saved Legos</a><br/>
+            <a href = "/legos/tosave">Back to Full Legos List to Save</a>
+        </footer>
 
     </div>
     <% include ../partials/bootstrap.ejs %>

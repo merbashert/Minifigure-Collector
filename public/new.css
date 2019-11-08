@@ -1,0 +1,44 @@
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+heading {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 80%;
+}
+
+.lego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+
+}
+
+a {
+    color: black;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin: 2px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

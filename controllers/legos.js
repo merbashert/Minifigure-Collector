@@ -127,16 +127,7 @@ router.put('/:id', (req, res) => {
     })
 })
 
-router.get('/:id/edit', (req, res) => {
-    Lego.findById(req.params.id, (err, foundLego) => {
-        res.render(
-            'legos/edit.ejs',
-            {
-                lego:foundLego
-            }
-        );
-    })
-})
+
 
 
 router.delete('/:id', (req, res) => {
