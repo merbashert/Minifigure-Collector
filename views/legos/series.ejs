@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title></title>
+
+    <title>Lego Minifigures - Series <%=series%></title>
+<% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/series.css">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
     <h1> Series <%=series%></h1>
-
-    <div class = "container">
+    <div class="section">
         <% for(let i = 0; i < legos.length; i++){ %>
-            <div class = "card">
+            <div class="lego">
                 <a href = "/legos/<%=legos[i].id%>">
                     <%=legos[i].name%>
                 </a><br/>
                 <img src = "<%=legos[i].img%>"><br/>
-
             </div>
+
             <% } %>
-            <a href = "/legos">Back to Index</a>
-
         </div>
-
+        <footer>
+            <a href = "/"> Back to Login Page</a>
+            <a href = "/legos">View Full Lego List</a>
+        </footer>
+        <% include ../partials/bootstrap.ejs %>
     </body>
     </html>

@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
+
     <title></title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/show.css">
 
 </head>
 <body>
-    <div class = "container">
-
-            <img src = "<%=lego.img%>"><br/>
-
-            Name: <%=lego.name%><br/>
-            <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
-            Year: <%=lego.year%><br/>
 
 
-    <footer>
-        <a href = "/saved">Back to My Saved Legos</a><br/>
-        <a href = "/legos">Back to Full Legos List</a>
-    </footer>
 
-    </div>
-</body>
-</html>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col">
+                <div class = "card" style = "width: 20rem">
+                    <img class = "img-fluid" src = "<%=lego.img%>" class="card-img-top"><br/>
+                    <div class="card-block text-center">
+                        <h4 class="card-title">Name: <%=lego.name%></h4>
+                        <p class="card-text">
+                            <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
+                            Year: <%=lego.year%><br/></p>
+                            <a href = "/legos" class = "btn btn-primary">Back to Full Legos List</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <% include ../partials/bootstrap.ejs %>
+    </body>
+    </html>

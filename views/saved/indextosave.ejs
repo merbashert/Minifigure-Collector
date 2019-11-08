@@ -1,29 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
     <title></title>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/index.css">
+<% include ../partials/bootstrap-meta.ejs %>
+<link rel="stylesheet" href="/index.css">
 </head>
 <body>
-    <h1>Index Page</h1>
 
-    <div class = "container">
+<heading>
+        <h1>Index Page</h1>
+</heading>
+
+    <div class = "section">
         <% for(let i = 0; i < legos.length; i++){ %>
-            <div class = "card">
-                <h4 class = "card-title"><a href = "/legos/<%=legos[i].id%>">
+            <div class = "lego">
+                <h5 class = "card-title"><a href = "/legos/save/<%=legos[i].id%>">
                     <%=legos[i].name%>
                 </a></h4>
                 <a href = "/legos/<%=legos[i].series%>/series">
                     Series <%=legos[i].series%>
                 </a>
                 <img src = "<%=legos[i].img%>"><br/>
-                <form action="/legos/<%=legos[i].id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete This Lego">
-                </form>
                 <form action="/saved" method="post">
-                    <input type="submit" value="Add to My Collection">
+                    <input class = "btn btn-outline-dark btn-sm"  type="submit" value="Add to My Collection">
                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                     <input type="hidden" name = "series" value="<%=legos[i].series%>">
                     <input type="hidden" name = "year" value="<%=legos[i].year%>">
@@ -44,6 +43,6 @@
         <form action="/sessions/destroy" method="post">
             <input type="submit" value="Log Out">
         </form>
-
+<% include ../partials/bootstrap.ejs %>
     </body>
     </html>

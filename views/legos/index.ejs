@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
     <title></title>
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/index.css">
 </head>
 <body>
     <h1>Index Page</h1>
 
-    <div class = "container">
+    <div class = "section">
         <% for(let i = 0; i < legos.length; i++){ %>
-            <div class = "card">
+            <div class = "lego">
                 <h4 class = "card-title"><a href = "/legos/<%=legos[i].id%>">
                     <%=legos[i].name%>
                 </a></h4>
@@ -35,6 +34,6 @@
         <form action="/sessions/destroy" method="post">
             <input type="submit" value="Log Out">
         </form>
-
+<% include ../partials/bootstrap.ejs %>
     </body>
     </html>

@@ -29,7 +29,7 @@ router.get('/tosave', (req, res) => {
     if(req.session.username) {
         Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
             res.render(
-                'legos/indextosave.ejs',
+                'saved/indextosave.ejs',
                 {
                     legos:legos,
                     username: req.session.username
@@ -59,7 +59,7 @@ router.get('/:id/series/tosave', (req, res) => {
     if(req.session.username) {
         Lego.find({series: req.params.id}, null, {sort: {name: 1}}, (error, foundLego) => {
             res.render(
-                'legos/seriestosave.ejs',
+                'saved/seriestosave.ejs',
                 {
                     legos: foundLego,
                     series: req.params.id,
@@ -103,7 +103,7 @@ router.get('/save/:id/', (req, res) => {
     if(req.session.username) {
         Lego.findById(req.params.id, (err, foundLego) => {
             res.render(
-                'legos/showtosave.ejs', {
+                'saved/showtosave.ejs', {
                     lego: foundLego,
                     username: req.session.username
                 }

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title></title>
+<% include ../partials/bootstrap-meta.ejs %>
+    <link rel="stylesheet" href="/show.css">
+
+</head>
+<body>
+    <div class = "container">
+
+            <img src = "<%=saved.img%>"><br/>
+
+            Name: <%=saved.name%><br/>
+            <a href = "/legos/<%=saved.series%>/series/tosave">Series: <%=saved.series%></a><br/>
+            Year: <%=saved.year%><br/>
+            <form action="/saved/<%=saved.id%>/saved?_method=DELETE" method="POST">
+                <input type="submit" value="Delete From My Collection">
+            </form>
+
+    <footer>
+        <a href = "/saved">Back to My Saved Legos</a>
+    </footer>
+
+    </div>
+    <% include ../partials/bootstrap.ejs %>
+</body>
+</html>

@@ -1,16 +1,44 @@
-img {
-    width: 100%;
+body {
+    font-family: 'Playfair Display', serif;
 }
 
-.card {
+heading {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 80%;
+}
+
+.lego {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 200px;
+
 }
 
-.container {
+a {
+    color: black;
+}
+
+.section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.btn {
+    margin-bottom: 10px;
+}
+
+h4 {
+    margin: 2px;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
