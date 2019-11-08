@@ -4,7 +4,8 @@ const legoSchema = new mongoose.Schema({
     name: {type: String, required: true},
     series: {type: String},
     year: {type: Number},
-    img: {type: String}
+    img: {type: String},
+    username: {type: String}
 })
 
 const Lego = mongoose.model('Lego', legoSchema)

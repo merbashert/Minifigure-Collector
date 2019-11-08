@@ -15,7 +15,7 @@ const User = require('../models/users.js')
 
 router.get('/', (req, res) => {
     if(req.session.username) {
-        Saved.find({}, null, {sort: {name: 1}}, (error, saved) => {
+        Saved.find({username: req.session.username}, null, {sort: {name: 1}}, (error, saved) => {
             res.render(
                 'legos/saved.ejs',
                 {
@@ -28,6 +28,35 @@ router.get('/', (req, res) => {
         res.redirect('/')
     }
 
+});
+
+router.get('/byseries', (req, res) => {
+    if(req.session.username) {
+        Saved.find({}, null, {sort: {series: 1}}, (error, saved) => {
+            res.render(
+                'legos/savedseries.ejs',
+                {
+                    saved:saved,
+                    username:req.session.username
+                }
+            );
+        });
+    } else {
+        res.redirect('/')
+    }
+
+});
+
+router.get('/:id/byseries', (req, res) => {
+    Saved.find({series: req.params.id},  null, {sort: {name: 1}},  (err, foundLego) => {
+        res.render(
+            'legos/series.ejs',
+            {
+                legos: foundLego,
+                series: req.params.id
+            }
+        );
+    });
 });
 
 router.get('/add', (req, res) => {

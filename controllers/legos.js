@@ -4,21 +4,35 @@ const Saved = require('../models/saved.js')
 const router = express.Router();
 
 
-// router.get('/seed', (req, res)=>{
-//     Lego.create([
-//
-//     ], (err, data)=>{
-//         res.redirect('/legos');
-//     })
-// });
+router.get('/seed', (req, res)=>{
+    Lego.create([
+
+
+    ], (err, data)=>{
+        res.redirect('/legos');
+    })
+});
 
 router.get('/', (req, res) => {
-    if(req.session.username) {
         Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
             res.render(
                 'legos/index.ejs',
                 {
-                    legos:legos
+                    legos:legos,
+                    username: req.session.username
+                }
+            );
+        });
+});
+
+router.get('/tosave', (req, res) => {
+    if(req.session.username) {
+        Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
+            res.render(
+                'legos/indextosave.ejs',
+                {
+                    legos:legos,
+                    username: req.session.username
                 }
             );
         });
@@ -30,7 +44,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id/series', (req, res) => {
-    Lego.find({series: req.params.id}, (err, foundLego) => {
+    Lego.find({series: req.params.id},  null, {sort: {name: 1}},  (err, foundLego) => {
         res.render(
             'legos/series.ejs',
             {
@@ -39,6 +53,24 @@ router.get('/:id/series', (req, res) => {
             }
         );
     });
+});
+
+router.get('/:id/series/tosave', (req, res) => {
+    if(req.session.username) {
+        Lego.find({series: req.params.id}, null, {sort: {name: 1}}, (error, foundLego) => {
+            res.render(
+                'legos/seriestosave.ejs',
+                {
+                    legos: foundLego,
+                    series: req.params.id,
+                    username: req.session.username
+                }
+            );
+        });
+    } else {
+        res.redirect('/')
+    }
+
 });
 
 //Search Graveyard
@@ -65,6 +97,20 @@ router.get('/:id', (req, res) => {
             }
         );
     });
+});
+
+router.get('/save/:id/', (req, res) => {
+    if(req.session.username) {
+        Lego.findById(req.params.id, (err, foundLego) => {
+            res.render(
+                'legos/showtosave.ejs', {
+                    lego: foundLego,
+                    username: req.session.username
+                }
+            );
+        });
+    }
+
 });
 
 router.post('/', (req, res) => {

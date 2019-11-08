@@ -14,3 +14,7 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+h4 {
+    margin: 2px;
+}

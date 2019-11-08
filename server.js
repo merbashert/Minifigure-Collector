@@ -74,11 +74,6 @@ app.get('/', (req, res) => {
     res.render('home.ejs')
 })
 
-app.get('/set', (req, res) => {
-    req.session.username = "meredith";
-    res.send("I set a cookie")
-})
-
 app.get('/get', (req, res) => {
     res.send(req.session.username)
 })

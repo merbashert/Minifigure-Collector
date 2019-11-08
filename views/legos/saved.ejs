@@ -3,20 +3,23 @@
 <head>
     <meta charset="utf-8">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/saved.css">
+
 </head>
 <body>
-    <h1>Saved Page</h1>
 
-    Hi <%=username%>!
+    <h1>My Saved Legos</h1>
     <div class = "container">
         <% for(let i = 0; i < saved.length; i++){ %>
             <div class = "card">
-                <a href = "/saved/<%=saved[i].id%>">
+            <h4 class = "card-title">    <a href = "/saved/<%=saved[i].id%>">
                     <%=saved[i].name%>
-                </a>
-                <a href = "/legos/<%=saved[i].series%>/series">
-                    Series <%=saved[i].series%></a>
+                </a></h4>
+                <h5 class = "card-subtitle"><a href = "/legos/<%=saved[i].series%>/series">
+                    Series <%=saved[i].series%></a></h5>
                     <img src = "<%=saved[i].img%>"><br/>
                     <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
                         <input type="submit" value="Delete From My Collection">
@@ -25,7 +28,26 @@
                 <% } %>
             </div>
 
-            <a href = "/legos">View Full Lego List</a>
+            <a href = "/legos/tosave">Add From Full Lego List</a>
+            <a href = "legos/1/series/tosave">Series 1</a>
+            <a href = "legos/2/series/tosave">Series 2</a>
+            <a href = "legos/3/series/tosave">Series 3</a>
+            <a href = "legos/4/series/tosave">Series 4</a>
+            <a href = "legos/5/series/tosave">Series 5</a>
+            <a href = "legos/6/series/tosave">Series 6</a>
+            <a href = "legos/7/series/tosave">Series 7</a>
+            <a href = "legos/8/series/tosave">Series 8</a>
+            <a href = "legos/9/series/tosave">Series 9</a>
+            <a href = "legos/10/series/tosave">Series 10</a>
+            <a href = "legos/11/series/tosave">Series 11</a>
+            <a href = "legos/12/series/tosave">Series 12</a>
+            <a href = "legos/13/series/tosave">Series 13</a>
+            <a href = "legos/14/series/tosave">Series 14</a>
+            <a href = "legos/15/series/tosave">Series 15</a>
+            <a href = "legos/16/series/tosave">Series 16</a>
+            <a href = "legos/17/series/tosave">Series 17</a>
+            <a href = "legos/18/series/tosave">Series 18</a>
+            <a href = "legos/19/series/tosave">Series 19</a>
 
             <form action="/sessions/destroy" method="post">
                 <input type="submit" value="Log Out">
