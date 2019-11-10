@@ -3,34 +3,40 @@
 <head>
     <title></title>
     <% include ../partials/bootstrap-meta.ejs %>
-        <link rel="stylesheet" href="/new.css">
+    <link rel="stylesheet" href="/new-index.css">
 </head>
 <body>
-    <h1>Lego Suggestions</h1>
+    <% include ../partials/navbar_loggedin.ejs %>
+    <heading>
+        <h1><%=username%>'s Lego Suggestions</h1>
+    </heading>
 
     <div class = "section">
-
         <% for (let i = 0; i < created.length; i++) {%>
             <div class = "lego">
 
-                <%=created[i].name%>
+                <h4><%=created[i].name%></h4>
                 <img src = "<%=created[i].img%>">
                 Series: <%=created[i].series%><br/>
                 Year: <%=created[i].year%>
 
-            <form action = "/new/<%=created[i].id%>?_method=DELETE" method="POST">
-                <input class = "btn btn-outline-dark btn-sm"   type="submit" value="DELETE"/>
-            </form>
-            <a href = "/new/<%=created[i].id%>/edit">Edit</a>
-        </div>
+                <div class="buttons">
+                    <form action = "/new/<%=created[i].id%>?_method=DELETE" method="POST">
+                        <input class = "btn btn-outline-primary btn-sm"   type="submit" value="Delete"/>
+                    </form>
+                    <a class = "btn btn-outline-primary btn-sm" href = "/new/<%=created[i].id%>/edit">Edit</a>
+                </div>
+
+            </div>
             <%}%>
         </div>
-        <br/>
+
+
         <footer>
-            <a href = "/new/create">Create a New Lego</a>
-            <a href = "/saved">Return to My Saved Legos</a>
-            
+            <a class = "btn btn-outline-primary footer-button" href = "/new/create">Create a New Lego</a>
+            <a class = "btn btn-outline-primary footer-button" href = "/saved">Return to My Saved Legos</a>
+
         </footer>
-<% include ../partials/bootstrap.ejs %>
+        <% include ../partials/bootstrap.ejs %>
     </body>
     </html>

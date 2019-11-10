@@ -10,7 +10,7 @@ li:hover {
 @font-face {
     font-family: 'KBSticktoIt';
     src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
-        url('/fonts/KBSticktoIt.woff') format('woff');
+    url('/fonts/KBSticktoIt.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -49,10 +49,6 @@ img {
     padding: 10px;
 }
 
-.lego:hover {
-    background-color: #ECF3F9;
-}
-
 a {
     color: black;
     /* text-shadow: 0px 2.5px 4px #428bca; */
@@ -68,18 +64,6 @@ a {
     text-decoration: none;
 }
 
-.login {
-    padding: 5px;
-}
-
-.login:hover {
-    background-color: #ECF3F9;
-    padding: 5px;
-    text-decoration: none;
-    color: black;
-}
-
-
 .section {
     display: flex;
     flex-wrap: wrap;
@@ -87,6 +71,8 @@ a {
 }
 
 .btn {
+    color: black;
+    border: 2px solid black;
     margin-bottom: 10px;
 }
 
@@ -98,16 +84,4 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.navlogin {
-    padding: 5px;
-    margin: 5px;
-}
-
-.navlogin:hover {
-    background-color: #ECF3F9;
-    padding: 5px;
-    text-decoration: none;
-    color: black;
 }

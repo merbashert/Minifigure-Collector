@@ -1,14 +1,47 @@
 body {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lato', serif;
+
+}
+
+li:hover {
+    background-color: white;
+}
+
+@font-face {
+    font-family: 'KBSticktoIt';
+    src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
+    url('/fonts/KBSticktoIt.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
 heading {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 4em;
+    font-family: 'KBSticktoIt', cursive;
+    padding: 6px;
+    color: black;
+    text-shadow:
+    -2px -2px 0 #ffcf00,
+    -2px 2px 0 #ffcf00,
+    2px 2px 0 #ffcf00,
+    2px -2px 0 #ffcf00;
 }
 
 img {
     width: 80%;
+    margin: 5px 0px 8px 10%;
+
 }
 
 .lego {
@@ -16,11 +49,26 @@ img {
     flex-direction: column;
     align-items: center;
     width: 200px;
-
+    margin: 5px;
+    padding: 10px;
 }
 
 a {
     color: black;
+}
+
+a:hover {
+    color: #0745ff;
+}
+
+.btn {
+    color: black;
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.btn-light {
+    padding: 10px;
 }
 
 .section {
@@ -29,16 +77,22 @@ a {
     justify-content: center;
 }
 
-.btn {
-    margin-bottom: 10px;
-}
-
 h4 {
-    margin: 2px;
+    margin: 2.5px;
 }
 
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.addby {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-outline-dark {
+    padding: 0px;
+    width: 140px;
 }

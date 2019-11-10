@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
             res.render(
                 'legos/new-index.ejs',
                 {
-                    created: newLego
+                    created: newLego,
+                    username:(req.session.username).charAt(0).toUpperCase() + (req.session.username).slice(1)
                 }
             );
         });

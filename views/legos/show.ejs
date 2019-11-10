@@ -3,32 +3,23 @@
 <head>
 
     <title></title>
-<% include ../partials/bootstrap-meta.ejs %>
+    <% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/show.css">
 
 </head>
 <body>
-<% include ./partials/navbar.ejs %>
-
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col">
-                <div class = "card" style = "width: 20rem">
-                    <img class = "img-fluid" src = "<%=lego.img%>" class="card-img-top"><br/>
-                    <div class="card-block text-center">
-                        <h4 class="card-title">Name: <%=lego.name%></h4>
-                        <p class="card-text">
-                            <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
-                            Year: <%=lego.year%><br/></p>
-                            <a href = "/legos" class = "btn btn-primary">Back to Full Legos List</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <% include ../partials/navbar.ejs %>
+    <div class="section">
+        <img class = "img-fluid" src = "<%=lego.img%>"><br/>
+        Name: <%=lego.name%></h4><br/>
+        <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a>
+        Year: <%=lego.year%><br/>
+        <a href = "/legos" class = "btn btn-outline-primary">Back to Full Legos List</a>
+        <a href = "/" class = "btn btn-outline-primary">Back to Front Page</a>
 
 
         <% include ../partials/bootstrap.ejs %>
-    </body>
-    </html>
+    </div>
+
+</body>
+</html>

@@ -2,68 +2,72 @@
 <html lang="en" dir="ltr">
 <head>
 
-    <title>My Saved Legos</title>
-<% include ../partials/bootstrap-meta.ejs %>
+    <title><%=username%>'s Saved Legos</title>
+    <% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/saved.css">
 
 
 </head>
 <body>
 
-<% include ../partials/navbar_loggedin.ejs %>
+    <% include ../partials/navbar_loggedin.ejs %>
     <heading>
-        <h1>My Saved Legos</h1>
+        <h1><%=username%>'s Saved Legos</h1>
     </heading>
-    <div class = "section">
-        <% for(let i = 0; i < saved.length; i++){ %>
-            <div class="lego">
-                <h5><a href = "/saved/<%=saved[i].id%>/saved"><%=saved[i].name%></a></h4>
-                <h5><a href = "/legos/<%=saved[i].series%>/series/tosave">Series <%=saved[i].series%></a></h5>
-                <img src = "<%=saved[i].img%>"><br/>
-                <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
-                    <input class = "btn btn-outline-dark btn-sm" type="submit" value="Delete From My Collection">
-                </form>
-            </div>
-            <% } %>
-        </div>
-        <br/>
-        <footer>
-            <div class="dropdown">
-                <a class="btn btn-primary dropdown-toggle" class="dropdown-item" class="dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Add Legos By Collection</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                        <a class="dropdown-item" href = "/legos/tosave">Add From Full Lego List</a>
-                        <a class="dropdown-item" href = "legos/1/series/tosave">Series 1</a>
-                        <a class="dropdown-item" href = "legos/2/series/tosave">Series 2</a>
-                        <a class="dropdown-item" href = "legos/3/series/tosave">Series 3</a>
-                        <a class="dropdown-item" href = "legos/4/series/tosave">Series 4</a>
-                        <a class="dropdown-item" href = "legos/5/series/tosave">Series 5</a>
-                        <a class="dropdown-item" href = "legos/6/series/tosave">Series 6</a>
-                        <a class="dropdown-item" href = "legos/7/series/tosave">Series 7</a>
-                        <a class="dropdown-item" href = "legos/8/series/tosave">Series 8</a>
-                        <a class="dropdown-item" href = "legos/9/series/tosave">Series 9</a>
-                        <a class="dropdown-item" href = "legos/10/series/tosave">Series 10</a>
-                        <a class="dropdown-item" href = "legos/11/series/tosave">Series 11</a>
-                        <a class="dropdown-item" href = "legos/12/series/tosave">Series 12</a>
-                        <a class="dropdown-item" href = "legos/13/series/tosave">Series 13</a>
-                        <a class="dropdown-item" href = "legos/14/series/tosave">Series 14</a>
-                        <a class="dropdown-item" href = "legos/15/series/tosave">Series 15</a>
-                        <a class="dropdown-item" href = "legos/16/series/tosave">Series 16</a>
-                        <a class="dropdown-item" href = "legos/17/series/tosave">Series 17</a>
-                        <a class="dropdown-item" href = "legos/18/series/tosave">Series 18</a>
-                        <a class="dropdown-item" href = "legos/19/series/tosave">Series 19</a>
+    <div class="addby">
+        <div class="dropdown  dropright">
+            <a class="btn btn-light dropdown-toggle" class="dropdown-item" class="dropdown-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Add Legos By Series</a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href = "legos/1/series/tosave">Series 1</a>
+                    <a class="dropdown-item" href = "legos/2/series/tosave">Series 2</a>
+                    <a class="dropdown-item" href = "legos/3/series/tosave">Series 3</a>
+                    <a class="dropdown-item" href = "legos/4/series/tosave">Series 4</a>
+                    <a class="dropdown-item" href = "legos/5/series/tosave">Series 5</a>
+                    <a class="dropdown-item" href = "legos/6/series/tosave">Series 6</a>
+                    <a class="dropdown-item" href = "legos/7/series/tosave">Series 7</a>
+                    <a class="dropdown-item" href = "legos/8/series/tosave">Series 8</a>
+                    <a class="dropdown-item" href = "legos/9/series/tosave">Series 9</a>
+                    <a class="dropdown-item" href = "legos/10/series/tosave">Series 10</a>
+                    <a class="dropdown-item" href = "legos/11/series/tosave">Series 11</a>
+                    <a class="dropdown-item" href = "legos/12/series/tosave">Series 12</a>
+                    <a class="dropdown-item" href = "legos/13/series/tosave">Series 13</a>
+                    <a class="dropdown-item" href = "legos/14/series/tosave">Series 14</a>
+                    <a class="dropdown-item" href = "legos/15/series/tosave">Series 15</a>
+                    <a class="dropdown-item" href = "legos/16/series/tosave">Series 16</a>
+                    <a class="dropdown-item" href = "legos/17/series/tosave">Series 17</a>
+                    <a class="dropdown-item" href = "legos/18/series/tosave">Series 18</a>
+                    <a class="dropdown-item" href = "legos/19/series/tosave">Series 19</a>
 
-                    </div>
                 </div>
+            </div>
+
+        </div>
+
+        <div class = "section">
+            <% for(let i = 0; i < saved.length; i++){ %>
+                <div class="lego">
+                    <h5><a href = "/saved/<%=saved[i].id%>/saved"><%=saved[i].name%></a></h4>
+                        <h6><a href = "/legos/<%=saved[i].series%>/series/tosave">Series <%=saved[i].series%></a></h6>
+                        <a href = "/saved/<%=saved[i].id%>/saved">
+                            <img src = "<%=saved[i].img%>"><a/>
+                            <br/>
+                            <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
+                                <input class = "btn btn-outline-primary btn-sm" type="submit" value="Delete From My Collection">
+                            </form>
+                        </div>
+                        <% } %>
+                    </div>
+                    <br/>
+                    <footer>
 
 
+                        <form action="/sessions/destroy" method="post">
+                            <input type="submit" value="Log Out">
+                        </form>
+                    </footer>
+                    <% include ../partials/bootstrap.ejs %>
+                </body>
 
-                <form action="/sessions/destroy" method="post">
-                    <input type="submit" value="Log Out">
-                </form>
-            </footer>
-            <% include ../partials/bootstrap.ejs %>
-        </body>
 
-
-        </html>
+                </html>

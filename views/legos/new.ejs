@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
+<head>
 
-        <title></title>
-        <% include ../partials/bootstrap-meta.ejs %>
-        <link rel="stylesheet" href="/new.css">
-    </head>
-    <body>
-        <h1>New Page</h1>
+    <title></title>
+    <% include ../partials/bootstrap-meta.ejs %>
+    <link rel="stylesheet" href="/new.css">
+</head>
+<body>
 
-        <form action="/new" method="POST">
-            Name: <input type="text" name="name"><br/>
-            <form action="/action_page.php">
-    <p>Please select your gender:</p>
-      <input type="radio" name="gender" value="male"> Male<br>
-      <input type="radio" name="gender" value="female"> Female<br>
-<br/>
-      <p>Is your lego:</p>
-        <input type="radio" name="mood" value="happy"> Happy<br>
-        <input type="radio" name="mood" value="angry"> Angry<br>
-        <input type="radio" name="mood" value="scared"> Scared<br>
-            <input type="submit" value="Create Lego">
 
-        </form>
+    <div class="section">
+
+
+        <div class="new-lego">
+            <heading>
+            <h1>New Lego</h1>
+            </heading>
+            <form action="/new" method="POST">
+                Name: <input type="text" name="name"><br/>
+                <form action="/action_page.php">
+                    <p>Please select your gender:</p>
+                    <input type="radio" name="gender" value="male"> Male<br>
+                    <input type="radio" name="gender" value="female"> Female<br>
+                    <br/>
+                    <p>Is your lego:</p>
+                    <input type="radio" name="mood" value="happy"> Happy<br>
+                    <input type="radio" name="mood" value="angry"> Angry<br>
+                    <input type="radio" name="mood" value="scared"> Scared<br>
+                    <input class = "btn btn-outline-dark" type="submit" value="Create Lego">
+
+                </form>
+
+            </div>
+
+        </div>
+
         <% include ../partials/bootstrap.ejs %>
     </body>
-</html>
+    </html>

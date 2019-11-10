@@ -1,44 +1,64 @@
 body {
-    font-family: 'Playfair Display', serif;
-}
-
-heading {
-    display: flex;
-    justify-content: center;
-}
-
-img {
-    width: 80%;
-}
-
-.lego {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 250px;
+    font-family: 'Lato', serif;
+    background-color: #ffcf00;
 
 }
 
-a {
-    color: black;
+li:hover {
+    background-color: #ECF3F9;
+}
+
+@font-face {
+    font-family: 'KBSticktoIt';
+    src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
+    url('/fonts/KBSticktoIt.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
 }
 
 .section {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-.btn {
-    margin-bottom: 10px;
+.new-lego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border: 3px solid black;
 }
 
-h4 {
-    margin: 2px;
+h1 {
+    font-size: 4em;
+    font-family: 'KBSticktoIt', cursive;
+    padding: 6px;
+    color: black;
+    text-shadow:
+    -2px -2px 0 #ffcf00,
+    -2px 2px 0 #ffcf00,
+    2px 2px 0 #ffcf00,
+    2px -2px 0 #ffcf00;
+}
+
+
+.btn {
+    margin: 10px;
 }
 
 footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+.navlogin:hover {
+    background-color: #ECF3F9;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
 }

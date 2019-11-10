@@ -1,0 +1,62 @@
+body {
+    background-color: #ffcf00;
+    font-family: 'Lato', sans-serif;
+}
+
+@font-face {
+    font-family: 'KBSticktoIt';
+    src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
+        url('/fonts/KBSticktoIt.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h6{
+    font-family: 'KBSticktoIt', cursive;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+h6 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.section {
+    background-color: white;
+    border: 3px solid black;
+    width: 50%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.field {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.btn {
+    margin-top: 5px;
+}
+
+.navbar {
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+
+li:hover {
+    background-color: #157ffb;
+    border-radius: 5px;
+}

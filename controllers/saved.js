@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
                 'saved/saved.ejs',
                 {
                     saved:saved,
-                    username:req.session.username
+                    username:(req.session.username).charAt(0).toUpperCase() + (req.session.username).slice(1)
                 }
             );
         });

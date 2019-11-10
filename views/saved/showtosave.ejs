@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
+
     <title></title>
     <% include ../partials/bootstrap-meta.ejs %>
     <link rel="stylesheet" href="/show.css">
 
 </head>
 <body>
-
     <% include ../partials/navbar_loggedin.ejs %>
-    <div class = "container">
+    <div class="section">
+        <img class = "img-fluid" src = "<%=lego.img%>"><br/>
 
-        <img src = "<%=lego.img%>"><br/>
-
-        Name: <%=lego.name%><br/>
-        <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a><br/>
+        Name: <%=lego.name%></h4><br/>
+        <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a>
         Year: <%=lego.year%><br/>
 
 
         <form action="/saved" method="post">
-            <input type="submit" value="Add to My Collection">
+            <input class = "btn btn-outline-primary" type="submit" value="Add to My Collection">
             <input type="hidden" name = "name" value="<%=lego.name%>">
             <input type="hidden" name = "series" value="<%=lego.series%>">
             <input type="hidden" name = "year" value="<%=lego.year%>">

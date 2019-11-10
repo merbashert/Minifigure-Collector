@@ -89,23 +89,31 @@ router.get('/:id/series/tosave', (req, res) => {
 //     console.log(req.params);
 // });
 
-router.get('/:id', (req, res) => {
-    Lego.findById(req.params.id, (err, foundLego) => {
-        res.render(
-            'legos/show.ejs', {
-                lego: foundLego
-            }
-        );
-    });
-});
+// router.get('/:id', (req, res) => {
+//     Lego.findById(req.params.id, (err, foundLego) => {
+//         res.render(
+//             'legos/show.ejs', {
+//                 lego: foundLego
+//             }
+//         );
+//     });
+// });
 
-router.get('/save/:id/', (req, res) => {
+router.get('/:id/', (req, res) => {
     if(req.session.username) {
         Lego.findById(req.params.id, (err, foundLego) => {
             res.render(
                 'saved/showtosave.ejs', {
                     lego: foundLego,
                     username: req.session.username
+                }
+            );
+        });
+    } else {
+        Lego.findById(req.params.id, (err, foundLego) => {
+            res.render(
+                'legos/show.ejs', {
+                    lego: foundLego
                 }
             );
         });

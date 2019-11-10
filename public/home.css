@@ -1,0 +1,80 @@
+body {
+    font-family: 'Lato', serif;
+    background-color: white;
+}
+
+@font-face {
+    font-family: 'KBSticktoIt';
+    src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
+    url('/fonts/KBSticktoIt.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+.navbar {
+    box-shadow: 1px 1px rgb(0,0,0,.5);
+    height: 70px;
+}
+
+li:hover {
+    background-color: white;
+}
+
+a:hover {
+    background-color: white;
+}
+
+h3 {
+    font-weight: bold;
+    color: white;
+    margin-top: 6px;
+}
+
+.blue {
+    height: 190px;
+    width: 100%;
+    padding-bottom: 15px;
+    color: #ffcf00;
+    background-color: #428bca;
+    border-bottom: 1px solid black;
+}
+
+.blue a{
+    color: white;
+}
+
+.clear {
+    height: 50%;
+    width: 35%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+    padding: 30px;
+}
+
+
+.login {
+    font-family: 'KBSticktoIt', cursive;
+    padding: 5px;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.login:hover {
+    text-decoration: none;
+}
+
+.navlogin {
+    padding: 5px;
+    margin: 5px;
+}
+
+.navlogin:hover {
+    background-color: #ECF3F9;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
