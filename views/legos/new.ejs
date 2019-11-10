@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/new.css">
 </head>
 <body>
-
+<% include ../partials/navbar_new.ejs %>
 
     <div class="section">
 
@@ -27,6 +27,7 @@
                     <input type="radio" name="mood" value="happy"> Happy<br>
                     <input type="radio" name="mood" value="angry"> Angry<br>
                     <input type="radio" name="mood" value="scared"> Scared<br>
+                    <input type="hidden" name = "username" value="<%=username%>">
                     <input class = "btn btn-outline-dark" type="submit" value="Create Lego">
 
                 </form>

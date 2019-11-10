@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
+
+    <% include ../partials/bootstrap-meta.ejs %>
+    <link rel="stylesheet" href="/edit.css">
     <title></title>
 </head>
 <body>
-    <h1>Edit Page</h1>
-    <form action = "/legos/<%=lego.id%>?_method=PUT" method = "POST">
-        <img src = "<%=lego.img%>"><br/>
-            Name: <input type="text" name="name" value="<%=lego.name%>"><br/>
-            Series: <input type="text" name="name" value="<%=lego.series%>"><br/>
-            Year: <input type="text" name="name" value="<%=lego.year%>"><br/>
-            <input type="submit" value="Submit Changes">
-        </form>
-        <nav>
-            <a href = "/new">Back to New Index</a>
+    <% include ../partials/navbar_new.ejs %>
+<div class="section">
 
+    <div class="edit-lego">
+        <h1>Edit My Lego</h1>
+        <form action = "/new/<%=lego.id%>?_method=PUT" method = "POST">
+            <img src = "<%=lego.img%>"><br/>
+                <h4>Name:</h4> <input class = "field" type="text" name="name" value="<%=lego.name%>"><br/>
+                <h4>Series:</h4> <input class = "field" type="text" name="series" value="<%=lego.series%>"><br/>
+                <div class="year">
+                <h4>Year:</h4> <input class = "field" type="text" name="year" value="<%=lego.year%>"><br/>
+                </div>
+                <input class = "btn btn-outline-dark"  type="submit" value="Submit Changes">
+            </form>
+
+    </div>
+</div>
+
+
+        <footer>
+            <a href = "/new">Back to New Index</a>
+        </footer>
+
+    <% include ../partials/bootstrap.ejs %>
     </body>
     </html>

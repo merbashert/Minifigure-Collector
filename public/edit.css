@@ -1,0 +1,72 @@
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #ffcf00;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+img {
+    width: 80%;
+    margin-top: -15px;
+}
+
+.field {
+    width: 90%;
+    margin-bottom: 10px;
+    border: 1px solid black;
+}
+
+.btn {
+    color: black;
+    border: 2px solid black;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+@font-face {
+    font-family: 'KBSticktoIt';
+    src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
+    url('/fonts/KBSticktoIt.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+li:hover {
+    background-color: white;
+}
+
+h1 {
+    font-size: 4em;
+    font-family: 'KBSticktoIt', cursive;
+    padding: 6px;
+    color: black;
+    text-shadow:
+    -2px -2px 0 #ffcf00,
+    -2px 2px 0 #ffcf00,
+    2px 2px 0 #ffcf00,
+    2px -2px 0 #ffcf00;
+}
+
+.edit-lego {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid black;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
