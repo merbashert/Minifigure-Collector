@@ -15,17 +15,17 @@
     <div class = "section">
         <% for(let i = 0; i < legos.length; i++){ %>
             <div class = "lego">
-                <h5 class = "card-title"><a href = "/legos/save/<%=legos[i].id%>">
+                <h5><a href = "/legos/save/<%=legos[i].id%>">
                     <%=legos[i].name%>
-                </a></h4>
-                <a href = "/legos/<%=legos[i].series%>/series">
+                </a></h5>
+                <h6><a href = "/legos/<%=legos[i].series%>/series">
                     Series <%=legos[i].series%>
-                </a>
+                </a></h6>
                 <a href = "/legos/<%=legos[i].id%>">
                     <img src = "<%=legos[i].img%>">
                 </a>
                 <form action="/saved" method="post">
-                    <input class = "btn btn-outline-primary btn-sm"  type="submit" value="Add to My Collection">
+                    <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                     <input type="hidden" name = "series" value="<%=legos[i].series%>">
                     <input type="hidden" name = "year" value="<%=legos[i].year%>">

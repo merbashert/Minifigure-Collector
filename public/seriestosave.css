@@ -40,7 +40,7 @@ img {
     margin: 5px 0px 8px 10%;
 }
 
-.btn {
+.btn-sm {
     color: black;
     border: 2px solid black;
     margin-bottom: 10px;
@@ -50,7 +50,7 @@ img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 230px;
     margin: 5px;
     padding: 10px;
 }
@@ -76,16 +76,10 @@ a:hover {
     color: black;
 }
 
-
-
 .section {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-h4 {
-    margin: 2.5px;
 }
 
 footer {
@@ -100,7 +94,50 @@ footer {
     margin: 0 50px;
 }
 
-.btn-outline-dark {
+.add {
     padding: 0px;
     width: 140px;
+}
+
+.btn-outline-light {
+    padding: 0px;
+    width: 140px;
+}
+
+.actions {
+    margin-bottom: 5px;
+}
+
+.actions a {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.actions a:hover {
+    text-shadow:
+    -1px -1px 2px #ffcf00,
+    -1px 1px 2px #ffcf00,
+    1px 1px 2px #ffcf00,
+    1px -1px 2px #ffcf00;
+}
+
+.logout {
+    height: 40px;
+    margin: 15px;
+}
+
+.empty {
+    color: lightgrey;
+    border: 1px solid lightgrey;
+    padding: 2px;
+    width: 140px;
+}
+
+.empty:hover {
+    color: lightgrey;
+    border: 1px solid lightgrey;
+}
+
+.name {
+    margin-bottom: 1px;
 }

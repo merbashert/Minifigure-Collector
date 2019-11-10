@@ -32,6 +32,10 @@ li:hover {
     border: 3px solid black;
 }
 
+.create {
+    margin: 10px;
+}
+
 h1 {
     font-size: 4em;
     font-family: 'KBSticktoIt', cursive;
@@ -42,11 +46,6 @@ h1 {
     -2px 2px 0 #ffcf00,
     2px 2px 0 #ffcf00,
     2px -2px 0 #ffcf00;
-}
-
-
-.btn {
-    margin: 10px;
 }
 
 footer {

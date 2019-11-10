@@ -19,43 +19,45 @@
         <%if(series > 1) {%>
             <a class = "btn btn-outline-dark" href = "/legos/<%=series-1%>/series/tosave">< Previous Series</a>
             <%}else {%>
-                < Previous Series
+                <div class="btn btn-outline disabled empty">< Previous Series</div>
                 <%}%>
 
-        <%if(series < 19) {%>
-            <a class = "btn btn-outline-dark"  href = "/legos/<%=parseInt(series)+1%>/series/tosave">Next Series ></a>
-            <%}else {%>
-                Next Series >
-                <%}%>
+                <%if(series < 19) {%>
+                    <a class = "btn btn-outline-dark"  href = "/legos/<%=parseInt(series)+1%>/series/tosave">Next Series ></a>
+                    <%}else {%>
+                        <div class="btn btn-outline disabled empty">Next Series></div>
+                        <%}%>
 
                     </div>
-<div class = "section">
-    <% for(let i = 0; i < legos.length; i++){ %>
-        <div class = "lego">
-            <a href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
-            <br/>
-            <a href = "/legos/<%=legos[i].id%>"><img src = "<%=legos[i].img%>"></a>
-            <form action="/saved" method="post">
-                <input class = "btn btn-outline-primary btn-sm"  type="submit" value="Add to My Collection">
-                <input type="hidden" name = "name" value="<%=legos[i].name%>">
-                <input type="hidden" name = "series" value="<%=legos[i].series%>">
-                <input type="hidden" name = "year" value="<%=legos[i].year%>">
-                <input type="hidden" name = "img" value="<%=legos[i].img%>">
-                <input type="hidden" name = "username" value="<%=username%>">
-            </form>
-        </div>
-        <% } %>
-    </div>
+                    <div class = "section">
+                        <% for(let i = 0; i < legos.length; i++){ %>
+                            <div class = "lego">
+                                <a class = "name" href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
+                                <a href = "/legos/<%=legos[i].id%>"><img src = "<%=legos[i].img%>"></a>
+                                <form action="/saved" method="post">
+                                    <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
+                                    <input type="hidden" name = "name" value="<%=legos[i].name%>">
+                                    <input type="hidden" name = "series" value="<%=legos[i].series%>">
+                                    <input type="hidden" name = "year" value="<%=legos[i].year%>">
+                                    <input type="hidden" name = "img" value="<%=legos[i].img%>">
+                                    <input type="hidden" name = "username" value="<%=username%>">
+                                </form>
+                            </div>
+                            <% } %>
+                        </div>
 
-                    <footer>
-                        <a href = "/legos/tosave">Save Legos From Full List</a>
-                        <a href = "/saved"> Back to My Saved Legos</a>
-                        <form action="/sessions/destroy" method="post">
-                            <input type="submit" value="Log Out">
-                        </form>
-                    </footer>
+                        <footer>
+                            <div class="actions">
+
+                                <a href = "/legos/tosave">Save Legos From Full List</a>|
+                                <a href = "/saved"> Back to My Saved Legos</a>
+                            </div>
 
 
-                    <% include ../partials/bootstrap.ejs %>
-                </body>
-                </html>
+                            <form action="/sessions/destroy" method="post">
+                                <input class = "btn btn-outline-dark logout" type="submit" value="Log Out">
+                            </form>
+                        </footer>
+                        <% include ../partials/bootstrap.ejs %>
+                    </body>
+                    </html>

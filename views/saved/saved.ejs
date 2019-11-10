@@ -51,9 +51,8 @@
                         <h6><a href = "/legos/<%=saved[i].series%>/series/tosave">Series <%=saved[i].series%></a></h6>
                         <a href = "/saved/<%=saved[i].id%>/saved">
                             <img src = "<%=saved[i].img%>"><a/>
-                            <br/>
                             <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
-                                <input class = "btn btn-outline-primary btn-sm" type="submit" value="Delete From My Collection">
+                                <input class = "btn btn-outline-primary btn-sm delete" type="submit" value="Delete From My Collection">
                             </form>
                         </div>
                         <% } %>
@@ -63,7 +62,7 @@
 
 
                         <form action="/sessions/destroy" method="post">
-                            <input type="submit" value="Log Out">
+                            <input class = "btn btn-outline-dark logout" type="submit" value="Log Out">
                         </form>
                     </footer>
                     <% include ../partials/bootstrap.ejs %>

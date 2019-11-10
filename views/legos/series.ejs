@@ -29,9 +29,9 @@
     <div class="section">
         <% for(let i = 0; i < legos.length; i++){ %>
             <div class="lego">
-                <a href = "/legos/<%=legos[i].id%>">
+                <a class = "name" href = "/legos/<%=legos[i].id%>">
                     <%=legos[i].name%>
-                </a><br/>
+                </a>
 
                 <a href = "/legos/<%=legos[i].id%>">
                     <img src = "<%=legos[i].img%>">
