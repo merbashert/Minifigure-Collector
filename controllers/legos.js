@@ -13,18 +13,6 @@ router.get('/seed', (req, res)=>{
 });
 
 router.get('/', (req, res) => {
-        Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
-            res.render(
-                'legos/index.ejs',
-                {
-                    legos:legos,
-                    username: req.session.username
-                }
-            );
-        });
-});
-
-router.get('/tosave', (req, res) => {
     if(req.session.username) {
         Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
             res.render(
@@ -36,25 +24,44 @@ router.get('/tosave', (req, res) => {
             );
         });
     } else {
+        Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
+            res.render(
+                'legos/index.ejs',
+                {
+                    legos:legos,
+                    username: req.session.username
+                }
+            );
+        });
+    }
+
+});
+
+router.get('/saved', (req, res) => {
+    if(req.session.username) {
+        Saved.find({username: req.session.username}, null, {sort: {name: 1}}, (error, saved) => {
+            res.render(
+                'saved/saved.ejs',
+                {
+                    saved:saved,
+                    username:(req.session.username).charAt(0).toUpperCase() + (req.session.username).slice(1)
+                }
+            );
+        });
+    } else {
         res.redirect('/')
     }
 
 });
 
+router.post('/saved', (req, res) => {
+    Saved.create(req.body, (error, added) => {
+        res.redirect('/legos/saved')
+
+    })
+})
 
 router.get('/:id/series', (req, res) => {
-    Lego.find({series: req.params.id},  null, {sort: {name: 1}},  (err, foundLego) => {
-        res.render(
-            'legos/series.ejs',
-            {
-                legos: foundLego,
-                series: req.params.id
-            }
-        );
-    });
-});
-
-router.get('/:id/series/tosave', (req, res) => {
     if(req.session.username) {
         Lego.find({series: req.params.id}, null, {sort: {name: 1}}, (error, foundLego) => {
             res.render(
@@ -67,7 +74,15 @@ router.get('/:id/series/tosave', (req, res) => {
             );
         });
     } else {
-        res.redirect('/')
+        Lego.find({series: req.params.id},  null, {sort: {name: 1}},  (err, foundLego) => {
+            res.render(
+                'legos/series.ejs',
+                {
+                    legos: foundLego,
+                    series: req.params.id
+                }
+            );
+        });
     }
 
 });
@@ -97,6 +112,22 @@ router.get('/:id/series/tosave', (req, res) => {
 //         );
 //     });
 // });
+router.get('/:id/saved', (req, res) => {
+    if(req.session.username) {
+        Saved.findById(req.params.id, (err, foundLego) => {
+            res.render(
+                'saved/showsaved.ejs',
+                {
+                    lego: foundLego,
+                    username:req.session.username
+                }
+            );
+        });
+    } else {
+        res.redirect('/')
+    }
+
+});
 
 router.get('/:id/', (req, res) => {
     if(req.session.username) {
@@ -120,12 +151,9 @@ router.get('/:id/', (req, res) => {
 
 });
 
-router.post('/', (req, res) => {
-    Lego.create(req.body, (error, added) => {
-        res.redirect('/add')
 
-    })
-})
+
+
 
 router.put('/:id', (req, res) => {
     Lego.findByIdAndUpdate(req.params.id, req.body, {new:true}, (error, updatedLego) => {
@@ -134,12 +162,11 @@ router.put('/:id', (req, res) => {
 })
 
 
-
-
-router.delete('/:id', (req, res) => {
-    Lego.findByIdAndRemove(req.params.id, (err, data) => {
-        res.redirect('/legos')
+router.delete('/:id/', (req, res) => {
+    Saved.findByIdAndRemove(req.params.id, (err, data) => {
+        res.redirect('/legos/saved')
     })
 })
+
 
 module.exports = router;

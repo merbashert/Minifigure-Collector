@@ -36,7 +36,7 @@
                             <div class = "lego">
                                 <a class = "name" href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
                                 <a href = "/legos/<%=legos[i].id%>"><img src = "<%=legos[i].img%>"></a>
-                                <form action="/saved" method="post">
+                                <form action="/legos/saved" method="post">
                                     <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
                                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                                     <input type="hidden" name = "series" value="<%=legos[i].series%>">
@@ -51,8 +51,8 @@
                         <footer>
                             <div class="actions">
 
-                                <a href = "/legos/tosave">Save Legos From Full List</a>|
-                                <a href = "/saved"> Back to My Saved Legos</a>
+                                <a href = "/legos/">Save Legos From Full List</a>|
+                                <a href = "/legos/saved"> Back to My Saved Legos</a>
                             </div>
 
 

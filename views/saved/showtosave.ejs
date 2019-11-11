@@ -17,7 +17,7 @@
         Year: <%=lego.year%><br/>
 
 
-        <form action="/saved" method="post">
+        <form action="/legos/saved" method="post">
             <input class = "btn btn-outline-primary" type="submit" value="Add to My Collection">
             <input type="hidden" name = "name" value="<%=lego.name%>">
             <input type="hidden" name = "series" value="<%=lego.series%>">

@@ -15,7 +15,7 @@ router.post('/', (req, res) => {
             const doesPasswordMatch = bcrypt.compareSync(req.body.password, foundUser.password)
             if(doesPasswordMatch){
                 req.session.username = foundUser.username;
-                res.redirect('/saved')
+                res.redirect('/legos/saved')
             } else {
                 res.redirect('/sessions/new')
             }

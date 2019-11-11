@@ -52,9 +52,6 @@ app.use(session({
 const legosController = require('./controllers/legos.js');
 app.use('/legos', legosController)
 
-const savedController = require('./controllers/saved.js');
-app.use('/saved', savedController)
-
 const usersController = require('./controllers/users.js');
 app.use('/users', usersController)
 

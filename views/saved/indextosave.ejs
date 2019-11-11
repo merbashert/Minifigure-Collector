@@ -54,7 +54,7 @@
                 <a href = "/legos/<%=legos[i].id%>">
                     <img src = "<%=legos[i].img%>">
                 </a>
-                <form action="/saved" method="post">
+                <form action="/legos/saved" method="post">
                     <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                     <input type="hidden" name = "series" value="<%=legos[i].series%>">

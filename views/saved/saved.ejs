@@ -47,11 +47,11 @@
         <div class = "section">
             <% for(let i = 0; i < saved.length; i++){ %>
                 <div class="lego">
-                    <h5><a href = "/saved/<%=saved[i].id%>/saved"><%=saved[i].name%></a></h4>
-                        <h6><a href = "/legos/<%=saved[i].series%>/series/tosave">Series <%=saved[i].series%></a></h6>
-                        <a href = "/saved/<%=saved[i].id%>/saved">
+                    <h5><a href = "/legos/<%=saved[i].id%>/saved"><%=saved[i].name%></a></h4>
+                        <h6><a href = "/legos/<%=saved[i].series%>/series">Series <%=saved[i].series%></a></h6>
+                        <a href = "/legos/<%=saved[i].id%>/saved">
                             <img src = "<%=saved[i].img%>"><a/>
-                            <form action="/saved/<%=saved[i].id%>?_method=DELETE" method="POST">
+                            <form action="/legos/<%=saved[i].id%>?_method=DELETE" method="POST">
                                 <input class = "btn btn-outline-primary btn-sm delete" type="submit" value="Delete From My Collection">
                             </form>
                         </div>

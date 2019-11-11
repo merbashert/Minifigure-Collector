@@ -10,16 +10,16 @@
 
     <% include ../partials/navbar_loggedin.ejs %>
     <div class = "section">
-            <img class = "img-fluid" src = "<%=saved.img%>"><br/>
-            Name: <%=saved.name%><br/>
-            <a href = "/legos/<%=saved.series%>/series/tosave">Series: <%=saved.series%></a>
-            Year: <%=saved.year%><br/>
-            <form action="/saved/<%=saved.id%>/saved?_method=DELETE" method="POST">
+            <img class = "img-fluid" src = "<%=lego.img%>"><br/>
+            Name: <%=lego.name%><br/>
+            <a href = "/legos/<%=lego.series%>/series/">Series: <%=lego.series%></a>
+            Year: <%=lego.year%><br/>
+            <form action="/legos/<%=lego.id%>?_method=DELETE" method="POST">
                 <input class = "btn btn-outline-primary" type="submit" value="Delete From My Collection">
             </form>
 
     <div class = "actions">
-        <a href = "/saved">Back to My Saved Legos</a>
+        <a href = "/legos/saved">Back to My Saved Legos</a>
     </div>
 
     </div>
