@@ -11,10 +11,6 @@ body {
     font-style: normal;
 }
 
-.navbar {
-    box-shadow: 1px 1px rgb(0,0,0,.5);
-    height: 70px;
-}
 
 li:hover {
     background-color: white;
@@ -31,7 +27,7 @@ h3 {
 }
 
 .blue {
-    height: 190px;
+    height: 30%;
     width: 100%;
     padding-bottom: 15px;
     color: #ffcf00;
@@ -78,4 +74,16 @@ h3 {
     padding: 5px;
     text-decoration: none;
     color: black;
+}
+
+@media (max-width: 650px) {
+    .col-2 {
+        padding: 0px;
+    }
+    .col-2 a {
+        padding: 2px;
+    }
+    .navlogin {
+        padding-left: 4px;
+    }
 }
