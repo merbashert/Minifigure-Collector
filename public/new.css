@@ -36,6 +36,10 @@ li:hover {
     margin: 10px;
 }
 
+heading {
+    text-align: center;
+}
+
 h1 {
     font-size: 4em;
     font-family: 'KBSticktoIt', cursive;

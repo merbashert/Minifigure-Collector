@@ -16,6 +16,9 @@ body {
     justify-content: center;
 }
 
+heading {
+    text-align: center;
+}
 
 h1, h6{
     font-family: 'KBSticktoIt', cursive;
