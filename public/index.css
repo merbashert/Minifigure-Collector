@@ -117,3 +117,9 @@ footer {
     text-decoration: none;
     color: black;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

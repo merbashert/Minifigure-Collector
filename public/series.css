@@ -10,7 +10,7 @@ li:hover {
 @font-face {
     font-family: 'KBSticktoIt';
     src: url('/fonts/KBSticktoIt.woff2') format('woff2'),
-        url('/fonts/KBSticktoIt.woff') format('woff');
+    url('/fonts/KBSticktoIt.woff') format('woff');
     font-weight: 500;
     font-style: normal;
 }
@@ -92,8 +92,11 @@ h4 {
 
 footer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+}
+
+.action {
+    margin: 0 8px 20px 8px;
 }
 
 .navlogin {
@@ -123,4 +126,23 @@ footer {
 
 .name {
     margin-bottom: 1px;
+}
+
+.actions {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.actions a {
+    margin: 10px;
+    font-size: 20px;
+}
+
+.actions a:hover {
+    text-shadow:
+    -1px -1px 2px #ffcf00,
+    -1px 1px 2px #ffcf00,
+    1px 1px 2px #ffcf00,
+    1px -1px 2px #ffcf00;
 }

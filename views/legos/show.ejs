@@ -15,7 +15,11 @@
         <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a>
         Year: <%=lego.year%><br/>
         <a href = "/legos" class = "btn btn-outline-primary">Back to Full Legos List</a>
-        <a href = "/" class = "btn btn-outline-primary">Back to Front Page</a>
+        <div class="actions">
+            <a href = "/sessions/new">Login</a>
+            <a href="/users/new">Sign Up</a>
+        </div>
+        </div>
 
 
         <% include ../partials/bootstrap.ejs %>

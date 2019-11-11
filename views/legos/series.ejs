@@ -26,27 +26,27 @@
                         <%}%>
 
                     </div>
-    <div class="section">
-        <% for(let i = 0; i < legos.length; i++){ %>
-            <div class="lego">
-                <a class = "name" href = "/legos/<%=legos[i].id%>">
-                    <%=legos[i].name%>
-                </a>
+                    <div class="section">
+                        <% for(let i = 0; i < legos.length; i++){ %>
+                            <div class="lego">
+                                <a class = "name" href = "/legos/<%=legos[i].id%>">
+                                    <%=legos[i].name%>
+                                </a>
 
-                <a href = "/legos/<%=legos[i].id%>">
-                    <img src = "<%=legos[i].img%>">
-                </a>
-            </div>
+                                <a href = "/legos/<%=legos[i].id%>">
+                                    <img src = "<%=legos[i].img%>">
+                                </a>
+                            </div>
 
-            <% } %>
-        </div>
-        <br/>
+                            <% } %>
+                        </div>
+                        <br/>
 
                         <br/>
-                        <footer>
-                            <a class = "btn btn-primary" href = "/"> Back to Login Page</a>
-                            <a class = "btn btn-primary"  href = "/legos">View Full Lego List</a>
-                        </footer>
+                        <div class="actions">
+                            <a href = "/"> Back to Login Page</a>
+                            <a href = "/legos">View Full Lego List</a>
+                        </div>
                         <% include ../partials/bootstrap.ejs %>
                     </body>
                     </html>
