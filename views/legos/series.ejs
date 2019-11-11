@@ -16,13 +16,13 @@
         <%if(series > 1) {%>
             <a class = "btn btn-outline-dark" href = "/legos/<%=series-1%>/series">< Previous Series</a>
             <%}else {%>
-                < Previous Series
+                <div class="btn btn-outline disabled empty">< Previous Series</div>
                 <%}%>
 
                 <%if(series < 19) {%>
-                    <a class = "btn btn-outline-dark"  href = "/legos/<%=parseInt(series)+1%>/series">Next Series ></a>
+                    <a class = "btn btn-outline-dark"  href = "/legos/<%=parseInt(series)+1%>/series/">Next Series ></a>
                     <%}else {%>
-                        Next Series >
+                        <div class="btn btn-outline disabled empty">Next Series></div>
                         <%}%>
 
                     </div>
