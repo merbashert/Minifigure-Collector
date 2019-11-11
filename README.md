@@ -23,4 +23,4 @@
 - Create a new Lego suggestion by naming it and choosing the gender and mood - separated by User
 ---
 ### Approach Taken
-All Minifigures are saved to a main database that can be browsed without being signed in.  Once the user signs up and logs in, they can begin their own collection.  Every time a user clicks "Add to My Collection" all data is copied from the Lego object to a Saved Lego object.  Each Saved Lego object has a username assigned to it.  There are different versions of pages based on whether or not you're logged in - the app checks if you're logged in, and opens a page based on that
+All Minifigures are saved to a main database that can be browsed without being signed in.  Once the user signs up and logs in, they can begin their own collection.  Every time a user clicks "Add to My Collection" all data is copied from the Lego object to a Saved Lego object.  Each Saved Lego object has a username assigned to it.  There are different versions of pages based on whether or not you're logged in.  The app checks if you're logged in, and uses an if loop to decide which version of the page to load.
