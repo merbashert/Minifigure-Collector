@@ -143,3 +143,7 @@ footer {
 .name {
     margin-bottom: 1px;
 }
+
+.nav-logout {
+    padding: 0px;
+}

@@ -7,7 +7,6 @@ const router = express.Router();
 router.get('/seed', (req, res)=>{
     Lego.create([
 
-
     ], (err, data)=>{
         res.redirect('/legos');
     })
@@ -123,7 +122,6 @@ router.get('/:id/', (req, res) => {
 
 router.post('/', (req, res) => {
     Lego.create(req.body, (error, added) => {
-
         res.redirect('/add')
 
     })

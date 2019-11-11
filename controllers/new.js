@@ -7,8 +7,6 @@ const router = express.Router();
 router.put('/:id', (req, res) => {
     console.log(req.body);
     Created.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedModel) => {
-        console.log(error);
-        console.log(updatedModel);
         res.redirect('/new')
     })
 })

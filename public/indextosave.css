@@ -4,7 +4,8 @@ body {
 }
 
 li:hover {
-    background-color: #ECF3F9;
+    background-color: white;
+
 }
 
 @font-face {
@@ -98,4 +99,8 @@ footer {
 .addby {
     display: flex;
     justify-content: center;
+}
+
+.nav-logout {
+    padding: 0px;
 }
