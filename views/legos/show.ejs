@@ -14,16 +14,19 @@
         Name: <%=lego.name%></h4><br/>
         <a href = "/legos/<%=lego.series%>/series">Series: <%=lego.series%></a>
         Year: <%=lego.year%><br/>
+        <a href = "/legos/<%=lego.series%>/series" class = "btn btn-outline-primary">Back to Series Page</a>
         <a href = "/legos" class = "btn btn-outline-primary">Back to Full Legos List</a>
+
         <div class="actions">
+
             <a href = "/sessions/new">Login</a>
             <a href="/users/new">Sign Up</a>
         </div>
-        </div>
-
-
-        <% include ../partials/bootstrap.ejs %>
     </div>
+
+
+    <% include ../partials/bootstrap.ejs %>
+</div>
 
 </body>
 </html>
