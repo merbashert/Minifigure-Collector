@@ -63,19 +63,6 @@ a:hover {
     text-decoration: none;
 }
 
-.navlogin {
-    padding: 5px;
-}
-
-.navlogin:hover {
-    background-color: #ECF3F9;
-    padding: 5px;
-    text-decoration: none;
-    color: black;
-}
-
-
-
 .section {
     display: flex;
     flex-wrap: wrap;
@@ -93,10 +80,6 @@ h4 {
 footer {
     display: flex;
     justify-content: center;
-}
-
-.action {
-    margin: 0 8px 20px 8px;
 }
 
 .navlogin {
@@ -119,14 +102,11 @@ footer {
     height: 50%;
 }
 
-.actions {
-    display: flex;
-    justify-content: space-between;
-}
 
 .name {
     margin-bottom: 1px;
 }
+
 
 .actions {
     margin-bottom: 5px;
