@@ -12,9 +12,12 @@ router.get('/seed', (req, res)=>{
     })
 });
 
+//This route checks if the req.session.username cookie is present, and if it is, it loads the index page with the save to collection buttons at the bottom.  If it's not present, it loads the un-logged in version.
 router.get('/', (req, res) => {
     if(req.session.username) {
         Lego.find({}, null, {sort: {name: 1}}, (error, legos) => {
+            //The above line sorts the legos alphabetically.  Null converts the MongoDB driver find() to the Mongoose Model.find()
+            //https://medium.com/@jeanjacquesbagui/in-mongoose-sort-by-date-node-js-4dfcba254110
             res.render(
                 'saved/indextosave.ejs',
                 {
@@ -36,7 +39,7 @@ router.get('/', (req, res) => {
     }
 
 });
-
+//Saved Index - the page is populated by searching for any legos that have the user property name matching the username that was checked
 router.get('/saved', (req, res) => {
     if(req.session.username) {
         Saved.find({username: req.session.username}, null, {sort: {name: 1}}, (error, saved) => {
@@ -45,6 +48,7 @@ router.get('/saved', (req, res) => {
                 {
                     saved:saved,
                     username:(req.session.username).charAt(0).toUpperCase() + (req.session.username).slice(1)
+                    //capitalizes the Username in case the user has type it in lower case
                 }
             );
         });
@@ -54,6 +58,7 @@ router.get('/saved', (req, res) => {
 
 });
 
+//The saved post route - grabs the username from the get route and adds it to the saved
 router.post('/saved', (req, res) => {
     Saved.create(req.body, (error, added) => {
         res.redirect('/legos/saved')
@@ -61,6 +66,7 @@ router.post('/saved', (req, res) => {
     })
 })
 
+//works the same as the index page
 router.get('/:id/series', (req, res) => {
     if(req.session.username) {
         Lego.find({series: req.params.id}, null, {sort: {name: 1}}, (error, foundLego) => {
@@ -68,8 +74,8 @@ router.get('/:id/series', (req, res) => {
                 'saved/seriestosave.ejs',
                 {
                     legos: foundLego,
-                    series: req.params.id,
-                    username: req.session.username
+                    series: req.params.id,//passes on the series name so the page can load with the correct series title
+                    username: req.session.username// passes on the username so it can be added to the username field of the newly saved lego
                 }
             );
         });
@@ -116,7 +122,7 @@ router.get('/:id/saved', (req, res) => {
     if(req.session.username) {
         Saved.findById(req.params.id, (err, foundLego) => {
             res.render(
-                'saved/showsaved.ejs',
+                'saved/showsaved.ejs', //show page for the Saved index - possible to figure out whether or not the name already exists in the saved collection and add it to the next loop?
                 {
                     lego: foundLego,
                     username:req.session.username
@@ -129,6 +135,7 @@ router.get('/:id/saved', (req, res) => {
 
 });
 
+//works the same as the index route
 router.get('/:id/', (req, res) => {
     if(req.session.username) {
         Lego.findById(req.params.id, (err, foundLego) => {
@@ -139,7 +146,7 @@ router.get('/:id/', (req, res) => {
                 }
             );
         });
-    } else {
+    } else { //if the user cookie isn't present, a page without a "save" button is rendered
         Lego.findById(req.params.id, (err, foundLego) => {
             res.render(
                 'legos/show.ejs', {
@@ -162,6 +169,7 @@ router.put('/:id', (req, res) => {
 })
 
 
+//Deletes from the "owns" collection
 router.delete('/:id/', (req, res) => {
     Saved.findByIdAndRemove(req.params.id, (err, data) => {
         res.redirect('/legos/saved')

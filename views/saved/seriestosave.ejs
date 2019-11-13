@@ -37,6 +37,7 @@
                                 <a class = "name" href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
                                 <a href = "/legos/<%=legos[i].id%>"><img src = "<%=legos[i].img%>"></a>
                                 <form action="/legos/saved" method="post">
+                                    <!-- saves to the owns collecction by invisibly sending all properties -->
                                     <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
                                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                                     <input type="hidden" name = "series" value="<%=legos[i].series%>">
