@@ -46,6 +46,17 @@ h6 {
     margin-top: 10px;
 }
 
+@media (max-width: 576px) {
+    .section {
+        width: 80%;
+    }
+
+    .field {
+        width: 60%;
+    }
+}
+
+
 .field {
     width: 100%;
     margin-bottom: 10px;
