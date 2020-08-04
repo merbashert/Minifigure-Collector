@@ -57,7 +57,7 @@ router.post('/', (req, res) => {
         }
 
         req.body.series = "Future Lego Series"
-        req.body.year = 2019
+        req.body.year = 2020
         req.body.username = req.session.username
         Created.create(req.body, (error, createdLego) => {
             console.log(createdLego);

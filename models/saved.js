@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const savedSchema = new mongoose.Schema({
-    name: {type: String, required: true},
+    name: {type: String, required: true, unique: true},
     series: {type: String},
     year: {type: Number},
     img: {type: String},

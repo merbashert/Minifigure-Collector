@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>All the Legos</title>
+<% include ../partials/bootstrap-meta.ejs %>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+        <% include ../partials/navbar.ejs %>
+    <heading>
+        <h1> All the Legos</h1>
+    </heading>
+
+    <div class = "section">
+        <% for(let i = 0; i < foundLego.length; i++){ %>
+            <div class = "lego">
+                <h5><a class = "name" href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
+                </h5>
+                <h6><a class = "series" href = "/legos/<%=legos[i].series%>/series"> Series <%=legos[i].series%> </a></h6>
+            <a href = "/legos/<%=legos[i].id%>">
+                <img src = "<%=legos[i].img%>">
+            </a>
+            </div>
+            <% } %>
+        </div>
+
+
+<% include ../partials/bootstrap.ejs %>
+    </body>
+    </html>
