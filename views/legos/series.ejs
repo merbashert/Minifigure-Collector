@@ -3,11 +3,11 @@
 <head>
 
     <title>Lego Minifigures - Series <%=series%></title>
-    <% include ../partials/bootstrap-meta.ejs %>
+    <%- include ('../partials/bootstrap-meta.ejs') %>
     <link rel="stylesheet" href="/series.css">
 </head>
 <body>
-    <% include ../partials/navbar.ejs %>
+    <%- include ('../partials/navbar.ejs') %>
     <heading>
         <h1> Series <%=series%></h1>
     </heading>
@@ -47,6 +47,6 @@
                             <a href = "/"> Back to Login Page</a>
                             <a href = "/legos">View Full Lego List</a>
                         </div>
-                        <% include ../partials/bootstrap.ejs %>
+                        <%- include ('../partials/bootstrap.ejs') %>
                     </body>
                     </html>

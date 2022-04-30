@@ -3,14 +3,14 @@
 <head>
 
     <title><%=username%>'s Saved Legos</title>
-    <% include ../partials/bootstrap-meta.ejs %>
+    <%- include ('../partials/bootstrap-meta.ejs') %>
     <link rel="stylesheet" href="/saved.css">
 
 
 </head>
 <body>
 
-    <% include ../partials/navbar_loggedin.ejs %>
+    <%- include ('../partials/navbar_loggedin.ejs') %>
     <heading>
         <h1 class = "animated tada"><%=username%>'s Saved Legos</h1>
     </heading>
@@ -65,7 +65,7 @@
                             <input class = "btn btn-outline-dark logout" type="submit" value="Log Out">
                         </form>
                     </footer>
-                    <% include ../partials/bootstrap.ejs %>
+                    <%- include ('../partials/bootstrap.ejs') %>
                 </body>
 
 

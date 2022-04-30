@@ -2,11 +2,11 @@
 <html lang="en" dir="ltr">
 <head>
     <title><%=username%>'s Lego Suggestions</title>
-    <% include ../partials/bootstrap-meta.ejs %>
+    <%- include ('../partials/bootstrap-meta.ejs') %>
     <link rel="stylesheet" href="/new-index.css">
 </head>
 <body>
-    <% include ../partials/navbar_loggedin.ejs %>
+    <%- include ('../partials/navbar_loggedin.ejs') %>
     <heading>
         <h1><%=username%>'s Lego Suggestions</h1>
     </heading>
@@ -36,6 +36,6 @@
             <a class = "btn btn-outline-primary footer-button" href = "/legos/saved">Return to My Saved Legos</a>
 
         </footer>
-        <% include ../partials/bootstrap.ejs %>
+        <%- include ('../partials/bootstrap.ejs') %>
     </body>
     </html>

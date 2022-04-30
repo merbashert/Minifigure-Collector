@@ -3,14 +3,14 @@
 <head>
 
     <title>Lego Minifigures - Series <%=series%></title>
-    <% include ../partials/bootstrap-meta.ejs %>
+    <%- include ('../partials/bootstrap-meta.ejs') %>
     <link rel="stylesheet" href="/seriestosave.css">
 
 
 </head>
 <body>
 
-    <% include ../partials/navbar_loggedin.ejs %>
+    <%- include ('../partials/navbar_loggedin.ejs') %>
 
     <heading>
         <h1 class = "animated tada"> Series <%=series%></h1>
@@ -35,9 +35,11 @@
                         <% for(let i = 0; i < legos.length; i++){ %>
                             <div class = "lego">
                                 <a class = "name" href = "/legos/<%=legos[i].id%>"><%=legos[i].name%></a>
+
                                 <a href = "/legos/<%=legos[i].id%>"><img src = "<%=legos[i].img%>"></a>
                                 <form action="/legos/saved" method="post">
                                     <!-- saves to the owns collecction by invisibly sending all properties -->
+
                                     <input class = "btn btn-outline-primary btn-sm add"  type="submit" value="Add to My Collection">
                                     <input type="hidden" name = "name" value="<%=legos[i].name%>">
                                     <input type="hidden" name = "series" value="<%=legos[i].series%>">
@@ -61,6 +63,6 @@
                                 <input class = "btn btn-outline-dark logout" type="submit" value="Log Out">
                             </form>
                         </footer>
-                        <% include ../partials/bootstrap.ejs %>
+                        <%- include ('../partials/bootstrap.ejs') %>
                     </body>
                     </html>

@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
     <title></title>
-<% include ../partials/bootstrap-meta.ejs %>
+<%- include ('../partials/bootstrap-meta.ejs') %>
     <link rel="stylesheet" href="/show.css">
 
 </head>
 <body>
 
-    <% include ../partials/navbar_loggedin.ejs %>
+    <%- include ('../partials/navbar_loggedin.ejs') %>
     <div class = "section">
             <img class = "img-fluid" src = "<%=lego.img%>"><br/>
             Name: <%=lego.name%><br/>
@@ -23,6 +23,6 @@
     </div>
 
     </div>
-    <% include ../partials/bootstrap.ejs %>
+    <%- include ('../partials/bootstrap.ejs') %>
 </body>
 </html>
