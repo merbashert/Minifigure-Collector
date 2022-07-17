@@ -5,8 +5,7 @@ const savedSchema = new mongoose.Schema({
     series: {type: String},
     year: {type: Number},
     img: {type: String},
-    username: {type: String},
-    owned: {type: Boolean}
+    username: {type: String}
 })
 
 const Saved = mongoose.model('Own', savedSchema);
